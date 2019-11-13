@@ -1,0 +1,103 @@
+#page-wrapper {
+	width: 100vw;
+	height: 100vh;
+	background-image: linear-gradient(to bottom, #0b1713, #4d5652);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	form#login-card {
+		width: 490px;
+		height: 90%;
+        min-height: 422px;
+        max-height: 622px;
+		box-shadow: 0 2px 6px rgba(0, 0, 0, 0.16);
+		background-color: #ffffff;
+		border-radius: 15px;
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+
+		img {
+			width: 60%;
+            max-width: 230px;
+            min-width: 170px;
+			height: 27%;
+            max-height: 170px;
+            min-height: 106px;
+			margin: 25px 0;
+		}
+		h4 {
+			font-size: 22px;
+			font-weight: 200;
+			margin: 15px 0px;
+		}
+		input {
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			border-radius: 20px;
+			border: solid #b9b9b9 0.5px;
+			height: 50px;
+            width: 80%;
+            max-width: 320px;
+			box-shadow: 0 1px 5px rgba(0, 0, 0, 0.16);
+			margin: 15px 0px;
+			padding: 5px 10px;
+			font-weight: 700;
+            background-color: #ffffff;
+
+			&:active,
+			&:focus {
+				outline: none;
+				border: solid rgb(0, 81, 255) 0.5px;
+			}
+			&::placeholder {
+				font-style: italic;
+				font-size: 16px;
+				font-weight: 400;
+			}
+			&.invalid {
+				border: solid rgb(255, 46, 46) 0.5px;
+
+			}
+		}
+        .error {
+            padding: 10px;
+            border-radius: 14px;
+            background-color: #ff846d;
+            border: solid #FF0F09 1px;
+        }
+		button {
+			height: 75px;
+			position: absolute;
+			bottom: 0;
+			left: 0;
+			width: 100%;
+			border: none;
+			color: #ffffff;
+			background-color: #1a2930;
+			font-size: 31px;
+			border-radius: 0 0 10px 10px;
+			cursor: pointer;
+			&:active,
+			&:focus {
+				outline: none;
+			}
+			&:hover {
+				opacity: 0.95;
+			}
+            @media only screen and (max-width: 490px) {
+                border-radius: 0;
+            }
+		}
+
+        @media only screen and (max-width: 490px) {
+            width: 100vw;
+            max-height: 100vh;
+            height: 100vh;
+            border-radius: 0;
+        }
+	}
+}
