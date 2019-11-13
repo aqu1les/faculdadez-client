@@ -16,4 +16,10 @@ export interface Discipline {
 		status: string;
 		student_id: number;
 	};
+	schedules: [{
+		id: number;
+		starts: Date;
+		ends: Date;
+		weekday: string;
+	}];
 }
