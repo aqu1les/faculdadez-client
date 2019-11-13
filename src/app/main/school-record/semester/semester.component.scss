@@ -1,0 +1,31 @@
+.semester-card {
+    background-color: #ffffff;
+    margin: 10px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    padding: 5px;
+
+    h3 {
+        cursor: pointer;
+        img {
+            transition: transform 250ms;
+        }
+    }
+
+    ul#disciplines-list {
+        list-style: none;
+        padding: 10px;
+    }
+
+    &.closed {
+        h3 {
+            img {
+                transform: rotate(-90deg);
+            }
+        }
+
+        ul#disciplines-list {
+            display: none;
+        }
+    }
+}

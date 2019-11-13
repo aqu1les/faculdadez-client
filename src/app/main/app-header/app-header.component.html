@@ -1,0 +1,25 @@
+<nav #nav>
+    <a [routerLink]="['/main/disciplines']"><img src="{{ ASSETS_DIR }}/logo.png" alt="Faculdade Z Logo"  /></a>
+    <div id="hamburguer" (click)="openMenu()">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+    <ul id="menu">
+        <li [routerLink]="['/main/schoolRecord']" routerLinkActive="link-active">Histórico Escolar</li>
+        <li [routerLink]="['/main/disciplines']" routerLinkActive="link-active">Disciplinas</li>
+        <li [routerLink]="['/main/support']" routerLinkActive="link-active">Suporte</li>
+        <li (click)="toggleDD()">
+            <p>{{ studentInfo?.name }}
+                <img src="{{ ASSETS_DIR }}/arrow-white.svg" alt="" width="16" height="16" id="dropdown-icon" #dropdownIcon style="fill: #ffffff"/>
+            </p>
+            <div>
+                <ul id="dropdown-content" #dropdownContent (mouseleave)="toggleDD()">
+                    <li>{{ studentInfo?.course.name }}</li>
+                    <li>{{ studentInfo?.current_semester }}º período</li>
+                    <li (click)="logout()">Sair</li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</nav>

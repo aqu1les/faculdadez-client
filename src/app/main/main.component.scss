@@ -1,0 +1,11 @@
+main {
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 70px;
+    background-size: contain;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: calc(100vh - 70px);
+}

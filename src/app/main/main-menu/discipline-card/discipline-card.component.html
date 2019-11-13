@@ -1,0 +1,14 @@
+<div class="card">
+    <section id="img-section">
+        <img src="{{ ASSETS_DIR }}/teacher.png" alt="teacher icon" />
+    </section>
+    <section id="teacher-section">
+        <h1 (click)="show(discipline.id)">{{ discipline.name }}</h1>
+        <h5>Professor(a):</h5>
+        <h4>{{ discipline.teacher.name }}</h4>
+    </section>
+    <div class="vertical-divider"></div>
+    <aside>
+        <div class="grade">--</div>
+    </aside>
+</div>

@@ -1,0 +1,9 @@
+<div id="wrapper-card">
+    <h1>Disciplina: {{ discipline?.name }}</h1>
+    <h2>Professor(a): {{ discipline?.teacher.name }}</h2>
+    <h3 *ngFor="let schedule of discipline?.schedules">
+        {{ schedule.weekday }} - {{ schedule.starts }} até {{ schedule.ends }}
+    </h3>
+    <h3>Dificuldade: {{ discipline?.difficulty }}</h3>
+
+</div>

@@ -1,0 +1,5 @@
+<ul>
+    <li *ngFor="let semester of semesters; let i = index">
+        <app-semester [disciplines]="semester" [semester]="i"></app-semester>
+    </li>
+</ul>

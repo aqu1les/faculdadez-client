@@ -1,0 +1,6 @@
+<div id="discipline-info">
+    <p>Disciplina: {{ discipline.name }}</p>
+    <p>Nota: {{ discipline.grade.final_average || "Não definido" }}</p>
+    <p>Status: {{ discipline.grade.status || "Não definido" }}</p>
+    <p>Professor: {{ discipline.teacher.name }}</p>
+</div>

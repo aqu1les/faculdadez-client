@@ -1,0 +1,90 @@
+section.card {
+    border-radius: 10px;
+    min-width: 500px;
+    max-width: 500px;
+    width: 50vw;
+    min-height: 75vh;
+    height: 60vh;
+    background-color: #fff;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.16);
+    margin-top: 20px;
+
+    h1 {
+        margin-left: 20px;
+        margin-bottom: 10px;
+    }
+    form {
+        width: 100%;
+        height: 94%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        label {
+            margin-top: 15px;
+            align-self: flex-start;
+            margin-left: 65px;
+            @media only screen and (max-width: 490px) {
+
+            }
+        }
+        input {
+            height: 40px;
+            width: 80%;
+        }
+        textarea {
+            max-height: 182px;
+            height: 30%;
+            width: 80%;
+            @media only screen and (max-width: 490px) {
+                margin-bottom: 20px;
+            }
+        }
+        input, textarea {
+            border: none;
+            box-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+            border-radius: 10px;
+            padding: 8px;
+            &:active, &:focus {
+                outline: none;
+                border: #3967ff solid 1px;
+            }
+        }
+        button {
+            width: 100%;
+            height: 70px;
+            border: none;
+            color: #ffffff;
+            background-color: #1a2930;
+            font-size: 28px;
+            border-radius: 0 0 10px 10px;
+            cursor: pointer;
+            &:active,
+            &:focus {
+                outline: none;
+            }
+            &:hover {
+                opacity: 0.95;
+            }
+            @media only screen and (max-width: 490px) {
+                border-radius: 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                right: 0;
+                width: 100vw;
+            }
+        }
+        @media only screen and (max-width: 490px) {
+            height: calc(100vh - 190px);
+        }
+    }
+    @media only screen and (max-width: 490px) {
+        min-width: 100vw;
+        width: 100vw;
+        min-height: 80vh;
+        height: calc(100vh - 70px);
+        margin: 0;
+    }
+}
