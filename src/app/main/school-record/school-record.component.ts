@@ -10,8 +10,8 @@ import { Discipline } from "../../interfaces/discipline";
 })
 export class SchoolRecordComponent implements OnInit {
 
-	private schoolRecord: SchoolRecord;
-	private semesters: [Discipline[]];
+	public schoolRecord: SchoolRecord;
+	public semesters: [Discipline[]];
 	constructor(private mainService: MainService) { }
 
 	ngOnInit() {

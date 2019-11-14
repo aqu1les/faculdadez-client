@@ -50,6 +50,10 @@ section.card {
                 outline: none;
                 border: #3967ff solid 1px;
             }
+
+            &.error {
+                border: solid crimson 0.5px;
+            }
         }
         button {
             width: 100%;

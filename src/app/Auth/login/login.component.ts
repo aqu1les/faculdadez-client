@@ -1,6 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { FormBuilder, Validators } from "@angular/forms";
-import { ASSETS_DIR } from "src/environments/environment";
+import { environment } from "src/environments/environment";
 import { LoginService } from "../login.service";
 import { Router } from "@angular/router";
 
@@ -11,12 +11,12 @@ import { Router } from "@angular/router";
 })
 export class LoginComponent implements OnInit {
 
-	readonly ASSETS_DIR = ASSETS_DIR;
-	private authForm = this.formBuilder.group({
+	readonly ASSETS_DIR = environment.ASSETS_DIR;
+	public authForm = this.formBuilder.group({
 		cpf: ["", [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
 		password: ["", [Validators.required]]
 	});
-	private errorForm;
+	public errorForm;
 
 	constructor(
 		private formBuilder: FormBuilder,

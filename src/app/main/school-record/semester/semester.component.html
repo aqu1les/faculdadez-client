@@ -1,6 +1,6 @@
 <div class="semester-card" id="{{ semester + 1 }}">
     <h3 (click)="open(semester+1)">
-        <img src="assets/arrow.svg" alt="" width="16" height="16"/> {{ semester + 1 }}º período
+        <img src="{{ ASSETS_DIR }}/arrow.svg" alt="" width="16" height="16"/> {{ semester + 1 }}º período
     </h3>
     <ul id="disciplines-list">
         <li *ngFor="let discipline of disciplines">

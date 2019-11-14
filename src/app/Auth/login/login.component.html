@@ -1,6 +1,6 @@
 <div id="page-wrapper">
 	<form [formGroup]="authForm" id="login-card" (submit)="submitForm()">
-		<img src="{{ ASSETS_DIR }}/student-icon.png" />
+		<img src="{{ ASSETS_DIR }}/student-icon.png" alt="Student icon" />
 		<h4>Portal do aluno - Login</h4>
 		<input [ngClass]="{'invalid': authForm.controls.cpf.touched && authForm.controls.cpf.errors}" type="text" formControlName="cpf" placeholder="Digite seu CPF" mask="000.000.000-99" />
 		<input [ngClass]="{'invalid': authForm.controls.password.touched && authForm.controls.password.errors}" type="password" formControlName="password" placeholder="Digite sua senha" />

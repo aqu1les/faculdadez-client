@@ -1,5 +1,5 @@
-import {Component, Input, OnInit, ViewChild} from "@angular/core";
-import { ASSETS_DIR } from "src/environments/environment";
+import { Component, OnInit, ViewChild } from "@angular/core";
+import { environment } from "src/environments/environment";
 import { Student } from "../../interfaces/student";
 import { LoginService } from "../../Auth/login.service";
 import { Router } from "@angular/router";
@@ -16,8 +16,8 @@ export class AppHeaderComponent implements OnInit {
 	@ViewChild("dropdownIcon", {static: true}) dropdownIcon: any;
 	@ViewChild("nav", {static: true}) nav: any;
 
-	readonly ASSETS_DIR = ASSETS_DIR;
-	private studentInfo: Student;
+	readonly ASSETS_DIR = environment.ASSETS_DIR;
+	public studentInfo: Student;
 	constructor(
 		private loginService: LoginService,
 		private router: Router,

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { ASSETS_DIR } from "../../environments/environment";
+import { environment } from "../../environments/environment";
 
 @Component({
   selector: "app-main",
@@ -8,7 +8,7 @@ import { ASSETS_DIR } from "../../environments/environment";
 })
 export class MainComponent implements OnInit {
 
-	private bgImg = `${ASSETS_DIR}/main-bg.png`;
+	public bgImg = `${environment.ASSETS_DIR}/main-bg.png`;
 	constructor() { }
 
 	ngOnInit() {

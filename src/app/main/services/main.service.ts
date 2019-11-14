@@ -1,17 +1,17 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
 import { BehaviorSubject, Observable } from "rxjs";
-import { API_URL } from "../../../environments/environment";
+import { environment } from "../../../environments/environment";
 import { Student } from "../../interfaces/student";
 import { SchoolRecord } from "../../interfaces/school-record";
 import { Discipline } from "../../interfaces/discipline";
 
 @Injectable({
-  providedIn: "root"
+	providedIn: "root"
 })
 export class MainService {
 
-	readonly API_URL = API_URL;
+	readonly API_URL = environment.API_URL;
 	private token = sessionStorage.getItem("token");
 	private studentInfo$: BehaviorSubject<Student> = new BehaviorSubject<Student>(null);
 	public disciplines: BehaviorSubject<Discipline[]> = new BehaviorSubject<Discipline[]>(null);
@@ -43,5 +43,13 @@ export class MainService {
 	}
 	getDisciplines() {
 		return this.disciplines.asObservable();
+	}
+
+	sendFeedback(feedback: { name: string, email: string, message: string }) {
+		return this.http.post(`${this.API_URL}/api/students/feedback`, feedback, {
+			headers: {
+				Authorization: `Bearer ${this.token}`
+			}
+		});
 	}
 }

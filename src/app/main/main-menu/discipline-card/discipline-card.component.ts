@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from "@angular/core";
 import { Discipline } from "../../../interfaces/discipline";
 import { Router } from "@angular/router";
-import { ASSETS_DIR } from "src/environments/environment";
+import { environment } from "src/environments/environment";
 
 @Component({
   selector: "app-discipline-card",
@@ -11,7 +11,7 @@ import { ASSETS_DIR } from "src/environments/environment";
 export class DisciplineCardComponent implements OnInit {
 
 	@Input() discipline: Discipline;
-	readonly ASSETS_DIR = ASSETS_DIR;
+	readonly ASSETS_DIR = environment.ASSETS_DIR;
 	constructor(private router: Router) { }
 
 	ngOnInit() {

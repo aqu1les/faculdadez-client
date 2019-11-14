@@ -1,5 +1,5 @@
 import { Injectable } from "@angular/core";
-import { API_URL } from "src/environments/environment";
+import { environment } from "src/environments/environment";
 import { HttpClient } from "@angular/common/http";
 import { tap } from "rxjs/operators";
 import { BehaviorSubject } from "rxjs";
@@ -8,7 +8,7 @@ import { BehaviorSubject } from "rxjs";
 	providedIn: "root"
 })
 export class LoginService {
-	readonly API_URL = API_URL;
+	readonly API_URL = environment.API_URL;
 	private loggedIn$: BehaviorSubject<boolean> = new BehaviorSubject(false);
 	constructor(private http: HttpClient) {}
 

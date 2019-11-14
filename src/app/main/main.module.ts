@@ -10,15 +10,28 @@ import { MainComponent } from "./main.component";
 import { SupportComponent } from "./support/support.component";
 import { SemesterComponent } from "./school-record/semester/semester.component";
 import { DisciplineComponent } from "./school-record/semester/discipline/discipline.component";
-import { ShowDisciplineComponent } from './show-discipline/show-discipline.component';
+import { ShowDisciplineComponent } from "./show-discipline/show-discipline.component";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 
 @NgModule({
-	declarations: [MainComponent, MainMenuComponent, AppHeaderComponent, DisciplineCardComponent, SchoolRecordComponent, SupportComponent, SemesterComponent, DisciplineComponent, ShowDisciplineComponent],
+	declarations: [
+		MainComponent,
+		MainMenuComponent,
+		AppHeaderComponent,
+		DisciplineCardComponent,
+		SchoolRecordComponent,
+		SupportComponent,
+		SemesterComponent,
+		DisciplineComponent,
+		ShowDisciplineComponent
+	],
 	imports: [
 		CommonModule,
 		MainRoutingModule,
-		HttpClientModule
+		HttpClientModule,
+		FormsModule,
+		ReactiveFormsModule
 	]
 })
 export class MainModule { }

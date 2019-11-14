@@ -9,7 +9,7 @@ import { MainService } from "../services/main.service";
 })
 export class MainMenuComponent implements OnInit {
 
-	private studentInfo: Student;
+    public studentInfo: Student;
 	constructor(
 		private mainService: MainService
 		) { }

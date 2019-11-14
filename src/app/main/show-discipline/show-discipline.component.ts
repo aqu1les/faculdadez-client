@@ -3,6 +3,7 @@ import { ActivatedRoute } from "@angular/router";
 import { MainService } from "../services/main.service";
 import { Discipline } from "../../interfaces/discipline";
 import { tap } from "rxjs/operators";
+import { environment } from "../../../environments/environment";
 
 @Component({
   selector: "app-show-discipline",
@@ -11,8 +12,9 @@ import { tap } from "rxjs/operators";
 })
 export class ShowDisciplineComponent implements OnInit {
 
-	private discipline: Discipline;
-	private id: number;
+	readonly ASSETS_DIR = environment.ASSETS_DIR;
+	public discipline: Discipline;
+	public id: number;
 
 	constructor(
 		private activeRoute: ActivatedRoute,

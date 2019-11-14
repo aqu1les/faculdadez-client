@@ -1,15 +1,15 @@
 <section class="card">
     <h1>Envie o seu feedback!</h1>
-    <form>
+    <form [formGroup]="feedbackForm" (ngSubmit)="submit()">
         <label for="name-field">Nome</label>
-        <input type="text" id="name-field">
+        <input type="text" id="name-field" formControlName="name" [ngClass]="{'error': feedbackForm.controls.name.errors && feedbackForm.controls.name.touched }" >
 
         <label for="email-field">E-mail</label>
-        <input type="email" id="email-field">
+        <input type="email" id="email-field" formControlName="email" [ngClass]="{'error': feedbackForm.controls.email.errors && feedbackForm.controls.email.touched}">
 
         <label for="message">Mensagem</label>
-        <textarea id="message"></textarea>
+        <textarea id="message" formControlName="message" [ngClass]="{'error': feedbackForm.controls.message.errors && feedbackForm.controls.message.touched}"></textarea>
 
-        <button type="submit">ENVIAR</button>
+        <button type="submit" [disabled]="feedbackForm.invalid">ENVIAR</button>
     </form>
 </section>
