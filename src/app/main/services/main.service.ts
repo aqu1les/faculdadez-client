@@ -10,23 +10,22 @@ import { Discipline } from "../../interfaces/discipline";
 	providedIn: "root"
 })
 export class MainService {
-
 	readonly API_URL = environment.API_URL;
-	private token = sessionStorage.getItem("token");
-	private studentInfo$: BehaviorSubject<Student> = new BehaviorSubject<Student>(null);
-	public disciplines: BehaviorSubject<Discipline[]> = new BehaviorSubject<Discipline[]>(null);
+	private studentInfo$: BehaviorSubject<Student> = new BehaviorSubject<
+		Student
+	>(null);
+	public disciplines: BehaviorSubject<Discipline[]> = new BehaviorSubject<
+		Discipline[]
+	>(null);
 
-	constructor(
-		private http: HttpClient) {
+	constructor(private http: HttpClient) {
 		this.loadStudentInfo();
 	}
 
 	private loadStudentInfo() {
-		return this.http.get(`${this.API_URL}/api/students/me`, {
-				headers: {
-					Authorization: `Bearer ${this.token}`
-				}
-			}).subscribe((studentInfo: Student) => {
+		return this.http
+			.get(`${this.API_URL}/api/students/me`)
+			.subscribe((studentInfo: Student) => {
 				this.studentInfo$.next(studentInfo);
 				this.disciplines.next(studentInfo.course.disciplines);
 			});
@@ -34,22 +33,19 @@ export class MainService {
 	getStudentInfo(): Observable<Student> {
 		return this.studentInfo$.asObservable();
 	}
-	getSchoolRecord(): Observable<SchoolRecord>  {
-		return this.http.get<SchoolRecord>(`${this.API_URL}/api/students/me/schoolRecord`, {
-			headers: {
-				Authorization: `Bearer ${this.token}`
-			}
-		});
+	getSchoolRecord(): Observable<SchoolRecord> {
+		return this.http.get<SchoolRecord>(
+			`${this.API_URL}/api/students/me/schoolRecord`
+		);
 	}
 	getDisciplines() {
 		return this.disciplines.asObservable();
 	}
 
-	sendFeedback(feedback: { name: string, email: string, message: string }) {
-		return this.http.post(`${this.API_URL}/api/students/feedback`, feedback, {
-			headers: {
-				Authorization: `Bearer ${this.token}`
-			}
-		});
+	sendFeedback(feedback: { name: string; email: string; message: string }) {
+		return this.http.post(
+			`${this.API_URL}/api/students/feedback`,
+			feedback
+		);
 	}
 }

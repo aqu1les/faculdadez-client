@@ -5,8 +5,9 @@ import { NgxMaskModule } from "ngx-mask";
 import { AppRoutingModule } from "./app-routing.module";
 import { AppComponent } from "./app.component";
 import { LoginComponent } from "./Auth/login/login.component";
-import { HttpClientModule } from "@angular/common/http";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
 import { AuthGuard } from "./Auth/auth.guard";
+import { TokenInterceptor } from "./main/interceptors/token.interceptor";
 
 @NgModule({
 	declarations: [AppComponent, LoginComponent],
@@ -18,7 +19,10 @@ import { AuthGuard } from "./Auth/auth.guard";
 		NgxMaskModule.forRoot(),
 		HttpClientModule
 	],
-	providers: [AuthGuard],
+	providers: [
+		AuthGuard,
+		{ provide: HTTP_INTERCEPTORS, useClass: TokenInterceptor, multi: true }
+	],
 	bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -4,7 +4,7 @@
 
 export const environment = {
 	production: false,
-	API_URL: "http://faculdadez-api.test",
+	API_URL: "http://localhost:8000",
 	ASSETS_DIR: "assets"
 };
 /*
