@@ -10,10 +10,16 @@ import { Router } from "@angular/router";
 	styleUrls: ["./login.component.scss"]
 })
 export class LoginComponent implements OnInit {
-
 	readonly ASSETS_DIR = environment.ASSETS_DIR;
 	public authForm = this.formBuilder.group({
-		cpf: ["", [Validators.required, Validators.minLength(11), Validators.maxLength(11)]],
+		cpf: [
+			"",
+			[
+				Validators.required,
+				Validators.minLength(11),
+				Validators.maxLength(11)
+			]
+		],
 		password: ["", [Validators.required]]
 	});
 	public errorForm;
@@ -21,15 +27,19 @@ export class LoginComponent implements OnInit {
 	constructor(
 		private formBuilder: FormBuilder,
 		private loginService: LoginService,
-		private router: Router) {}
+		private router: Router
+	) {}
 
 	ngOnInit() {}
 
 	submitForm() {
 		this.loginService.login(this.authForm.value).subscribe(
 			() => {
-				this.router.navigateByUrl("/main");
-			}, resp => {
+				setTimeout(() => {
+					this.router.navigateByUrl("/main");
+				}, 1000);
+			},
+			resp => {
 				this.errorForm = resp.error.error;
 				setTimeout(() => {
 					this.errorForm = "";
